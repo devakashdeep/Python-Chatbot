@@ -144,6 +144,7 @@ EMAIL_HOST_USER = 'akashd33p0073@gmail.com'
 EMAIL_HOST_PASSWORD = 'aqertfgq35twerty46yw45y4y6w nb4we3ty45g34'
 
 AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
     'app.backends.EmailBackend',
 ]
 
