@@ -1,0 +1,131 @@
+{% extends "../layout/layout.html" %} {% block main %} {% load static %}
+
+<section class="py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-2 col-sm-12 col-xs-12"></div>
+      <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+        <div class="login-form shadow p-5">
+          <div class="w-100 d-block mb-3">
+            <div class="text-center title">Create An Account</div>
+          </div>
+          <div class="form-section">
+            <form action="{% url 'signup' %}" method="post" class="form-group">
+              {% if messages %} {% for message in messages %}
+              <div
+                class="
+                  alert
+                  {% if message.tags %}
+                alert-{{message.tags}}
+                {% endif  %}
+                  alert-dismissible
+                  fade
+                  show
+                "
+                role="alert"
+              >
+                {{ message }}
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                ></button>
+              </div>
+              {% endfor %} {% endif %} {%csrf_token %}
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <label for="fullname">Full Name</label>
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="input-field"
+                      placeholder="Full Name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="username">Username</label>
+                  <div>
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      class="input-field"
+                      placeholder="Username"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="email">Email</label>
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="input-field"
+                      placeholder="info@example.com"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="username">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="input-field"
+                    placeholder="**********"
+                    required
+                    min="8"
+                  />
+                </div>
+                <div class="col-12 mb-3">
+                  <button type="submit" class="btn btn-primary w-100">
+                    SIGN UP
+                  </button>
+                </div>
+              </div>
+            </form>
+            <!-- <div class="divider mb-3"></div> -->
+            <!-- <p class="text-center">
+              <small> Log in with </small>
+            </p>
+            <div class="loginSocial">
+              <button class="btn btn-google w-100">
+                <img
+                  src="{% static '/images/google.png' %}"
+                  alt=""
+                  style="width: 25px"
+                />
+                <span> Google</span>
+              </button>
+            </div> -->
+          </div>
+          <div class="text-center">
+            <small>
+              Allready have an account?
+              <a href="{% url 'signup' %}" class="text-dark link">Login</a>
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-2 col-sm-12 col-xs-12"></div>
+    </div>
+  </div>
+</section>
+<script>
+  window.setTimeout(function () {
+    $(".alert")
+      .fadeTo(500, 0)
+      .slideUp(500, function () {
+        $(this).remove();
+      });
+  }, 2000);
+</script>
+{% endblock %}

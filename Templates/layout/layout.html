@@ -1,0 +1,280 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OYChatBot</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+  </head>
+  <body>
+    <header class="header shadow-sm">
+      <div class="container">
+        <div class="nav-header">
+          <div class="nav-main">
+            <div class="nav-logo">
+              OYE<span style="color: #121212 !important">CHATBOT</span>
+            </div>
+            <div class="menu-btn">
+              <button>
+                <i class="fas fa-times" style="font-size: 1.5rem"></i>
+              </button>
+            </div>
+          </div>
+
+          <nav class="navbar-container">
+            <ul class="nav-menu">
+              <li>
+                <a href="{% url 'addIntents' %}" class="nav-link">Dashboard</a>
+              </li>
+              <!-- <li>
+                <a href="{% url 'login' %}" class="nav-link">LOGIN</a>
+              </li>
+              <li>
+                <a href="{% url 'signup' %}" class="nav-link">SIGNUP</a>
+              </li> -->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main" role="main">{% block main %} {% endblock %}</main>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+            <h4 class="sub-heading text-white">
+              OYE<span class="text-primary">CHATBOT</span>
+            </h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+            </p>
+            <div class="my-3">
+              <div class="social-links">
+                <a href="#" class="mr-2">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="mr-2">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="mr-2">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+            <h4 class="sub-heading text-primary">Quick Links</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="#"
+                  style="
+                    text-decoration: none;
+                    color: #fff;
+                    margin-bottom: 10px;
+                  "
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  style="
+                    text-decoration: none;
+                    color: #fff;
+                    margin-bottom: 10px;
+                  "
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  style="
+                    text-decoration: none;
+                    color: #fff;
+                    margin-bottom: 10px;
+                  "
+                  >Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  style="
+                    text-decoration: none;
+                    color: #fff;
+                    margin-bottom: 10px;
+                  "
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  style="
+                    text-decoration: none;
+                    color: #fff;
+                    margin-bottom: 10px;
+                  "
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+            <h4 class="sub-heading text-primary">Have any query?</h4>
+            <div class="contact">
+              <div
+                style="
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  margin-bottom: 10px;
+                "
+              >
+                <i
+                  class="fas fa-mobile-alt"
+                  style="font-size: 1.2rem; margin-right: 10px"
+                ></i>
+                <span>+91 12345-67890</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  margin-bottom: 10px;
+                "
+              >
+                <i
+                  class="fas fa-at"
+                  style="font-size: 1.2rem; margin-right: 10px"
+                ></i>
+                <span>info@example.com</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  margin-bottom: 10px;
+                "
+              >
+                <i
+                  class="fas fa-map-marker"
+                  style="font-size: 1.2rem; margin-right: 10px"
+                ></i>
+                <span
+                  >ABC Road,<br />NewYork City,<br />
+                  USA</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+            <h4 class="sub-heading text-primary">News Letter</h4>
+            <p>Subscribe for Daily Updates and Quotes</p>
+            <div>
+              <form action="" method="post" class="form">
+                <input
+                  type="email"
+                  name="email"
+                  id="emailId"
+                  placeholder="Email"
+                  class="input-field"
+                  required
+                />
+                <button
+                  type="submit"
+                  class="btn btn-primary w-100 d-block mt-3"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div
+          style="height: 1px; width: 100%; background-color: #f1f1f19f"
+        ></div>
+        <div class="py-3 text-center" style="font-size: 12px">
+          &copy; oyechatbot.com
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+      integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+      integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="{% static '/js/app.js' %}"></script>
+    <script>
+      window.setTimeout(function () {
+        $(".alert")
+          .fadeTo(500, 0)
+          .slideUp(500, function () {
+            $(this).remove();
+          });
+      }, 2000);
+    </script>
+  </body>
+</html>

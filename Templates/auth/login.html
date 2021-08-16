@@ -1,0 +1,104 @@
+{% extends "../layout/layout.html" %} {% block main %} {% load static %}
+
+<section class="py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-2 col-sm-12 col-xs-12"></div>
+      <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+        <div class="login-form shadow p-5">
+          <div class="w-100 d-block mb-3">
+            <div class="text-center title">Login</div>
+          </div>
+          <div class="form-section">
+            {% if messages %} {% for message in messages %}
+            <div
+              class="
+                alert
+                {% if message.tags %}
+                alert-{{message.tags}}
+                {% endif  %}
+                alert-dismissible
+                fade
+                show
+              "
+              role="alert"
+            >
+              {{ message }}
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+            {% endfor %} {% endif %}
+            <form action="" method="post" class="form-group">
+              {%csrf_token %}
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <label for="username">Username/Email</label>
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="input-field"
+                      placeholder="info@example.com"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="username">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="input-field"
+                    placeholder="**********"
+                    required
+                    min="8"
+                  />
+                </div>
+                <div class="w-100 mb-3">
+                  <small>
+                    <a href="#" class="text-dark link">Forgot Password</a>
+                  </small>
+                </div>
+                <div class="col-12 mb-3">
+                  <button type="submit" class="btn btn-primary w-100">
+                    Log In
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="divider mb-3"></div>
+            <p class="text-center">
+              <small> Log in with </small>
+            </p>
+            <div class="loginSocial mb-3">
+              <button class="btn btn-google w-100">
+                <img
+                  src="{% static '/images/google.png' %}"
+                  alt=""
+                  style="width: 25px"
+                />
+                <span> Google</span>
+              </button>
+            </div>
+            <div class="text-center">
+              <small>
+                <a href="{% url 'signup' %}" class="text-dark link"
+                  >Create new account</a
+                >
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-2 col-sm-12 col-xs-12"></div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
