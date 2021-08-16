@@ -49,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # whitenoise
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'OyeChatBot.urls'
@@ -144,3 +146,5 @@ EMAIL_HOST_PASSWORD = 'aqertfgq35twerty46yw45y4y6w nb4we3ty45g34'
 AUTHENTICATION_BACKENDS = [
     'app.backends.EmailBackend',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
