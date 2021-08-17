@@ -54,17 +54,16 @@
             <div class="nav-logo">
               OYE<span style="color: #121212 !important">CHATBOT</span>
             </div>
-            <div class="menu-btn">
-              <button>
-                <i class="fas fa-times" style="font-size: 1.5rem"></i>
-              </button>
-            </div>
           </div>
 
           <nav class="navbar-container">
             <ul class="nav-menu">
               <li>
-                <a href="{% url 'addIntents' %}" class="nav-link">Dashboard</a>
+                <a
+                  href="{% url 'addIntents' %}"
+                  class="nav-link btn btn-primary"
+                  >Try Demo</a
+                >
               </li>
               <!-- <li>
                 <a href="{% url 'login' %}" class="nav-link">LOGIN</a>
@@ -81,13 +80,16 @@
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <h4 class="sub-heading text-white">
               OYE<span class="text-primary">CHATBOT</span>
             </h4>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              We Provide the Chat Bot Platform that will help our customers to
+              build their personal Chat Bot within few steps without any coding.
+              We help our customer to improve there business with personalized
+              Chat Bot that will help them to Market there business and improve
+              the business with our latest AI Technologies.
             </p>
             <div class="my-3">
               <div class="social-links">
@@ -103,7 +105,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+          <!--div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
             <h4 class="sub-heading text-primary">Quick Links</h4>
             <ul class="list-unstyled">
               <li>
@@ -162,7 +164,7 @@
                 >
               </li>
             </ul>
-          </div>
+          </div -->
           <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
             <h4 class="sub-heading text-primary">Have any query?</h4>
             <div class="contact">
@@ -275,6 +277,30 @@
             $(this).remove();
           });
       }, 2000);
+
+      const counters = document.querySelectorAll(".counter");
+      const speed = 200;
+
+      counters.forEach((counter) => {
+        const animate = () => {
+          const value = +counter.getAttribute("max-count");
+          const data = +counter.innerText;
+
+          const time = value / speed;
+          if (data < value) {
+            counter.innerText = Math.ceil(data + time);
+            setTimeout(animate, 1);
+          } else {
+            counter.innerText = value;
+          }
+        };
+
+        animate();
+        setInterval(() => {
+          let val = parseInt(counter.innerText);
+          counter.innerText = val + 1;
+        }, 4000);
+      });
     </script>
   </body>
 </html>

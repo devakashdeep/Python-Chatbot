@@ -36,6 +36,24 @@
   font-size: var(--h1);
   font-weight: bold;
 }
+.head-relative {
+  font-size: 5rem;
+  font-weight: bold;
+  position: relative;
+  color: var(--secondary) !important;
+  text-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%) !important ;
+}
+.overlay-heading {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  width: 100%;
+  color: var(--primary);
+  font-size: 3rem;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%) !important ;
+}
 
 .sub-heading {
   font-size: var(--h2);
@@ -163,26 +181,24 @@ nav {
 }
 .banner,
 .banner-about {
+  background-image: url("../images/banner.jpg");
   width: 100%;
   height: 600px;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  background-attachment: fixed !important;
+  background-attachment: scroll !important;
   background-blend-mode: difference !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.banner-textArea {
-  position: relative;
-  height: 600px;
-}
-.banner-text-alt {
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  position: absolute;
+.banner-text {
+  max-width: 500px;
+  height: auto;
   text-align: center;
   text-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%) !important ;
-  color: var(--primary) !important;
 }
 .dropdown-item {
   font-size: 14px;
@@ -198,17 +214,7 @@ nav {
   border: 2px solid var(--primary);
   box-shadow: 0 1px 2px 0 rgb(32 33 36 / 28%) !important ;
 }
-.banner-text {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-0, -50%);
-  width: 50%;
-  background-color: var(--white);
-  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%) !important ;
-  padding: 25px;
-  border-radius: 5px;
-}
+
 .showMenu {
   display: block;
   right: -0.5rem;
@@ -233,8 +239,19 @@ nav {
   border-color: var(--secondary) !important;
 }
 
+.card-inc {
+  height: 350px;
+}
+
+.card-inc:hover {
+  background-color: var(--primary);
+  color: var(--white) !important;
+}
+.card-inc:hover i {
+  color: var(--white) !important;
+}
 .primaryicon {
-  font-size: var(--h1);
+  font-size: 5rem;
   color: var(--primary);
 }
 .bg-img-alt {
@@ -253,6 +270,10 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+.section {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
 }
 .filler-section {
   background: url("../images/filer.jpg");

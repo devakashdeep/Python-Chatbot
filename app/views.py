@@ -102,17 +102,18 @@ def signup(request):
         customer = models.Customers(
             user=user, email_otp=otp, email_verified=False, customer_status="inactive")
         customer.save()
-        subject = f"{otp} is the code for Email Verification"
-        message = f'''Hi {user.first_name},
-        You OTP for the email verification is {otp}
-        '''
-        mail = send_mail(subject=subject, message=message,
-                         from_email="noreply@oyechatbot.com", recipient_list=[user.email], fail_silently=False)
-        if mail == 1:
-            messages.success(request, "OTP sent on your email")
-            return redirect('verifyOtp')
-        messages.error(
-            request, "Unable to send OTP. Please try after some time")
+        # subject = f"{otp} is the code for Email Verification"
+        # message = f'''Hi {user.first_name},
+        # You OTP for the email verification is {otp}
+        # '''
+        # mail = send_mail(subject=subject, message=message,
+        #                  from_email="noreply@oyechatbot.com", recipient_list=[user.email], fail_silently=False)
+        # if mail == 1:
+        #     messages.success(request, "OTP sent on your email")
+        #     return redirect('verifyOtp')
+        # messages.error(
+        #     request, "Unable to send OTP. Please try after some time")
+        return redirect('addIntents')
 
     return render(request, 'auth/register.html', context)
 
@@ -120,6 +121,7 @@ def signup(request):
 def verify_email_with_otp(request):
     if request.method == 'POST':
         otp = request.POST.get('otp')
+        a = User.objects.get(pk=request.user.id)
         user = models.Customers.objects.get(user__pk=request.user.id)
         if user:
             if user.email_otp == otp.strip():

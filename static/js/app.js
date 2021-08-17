@@ -81,6 +81,7 @@ const sendMessage = () => {
             <p style="font-size:12px; color:#121212">${new Date(Date.now()).toTimeString()} chat bot</p>
             </div>`
             msgsection.insertAdjacentHTML('beforeend', html);
+            msg = ""
 
         })
         .catch(error => console.log('error', error));
@@ -313,3 +314,7 @@ dropdownMenuButton.addEventListener('click', function () {
         }
     })
 })
+//--></script>
+
+
+

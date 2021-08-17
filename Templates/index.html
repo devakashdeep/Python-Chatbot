@@ -1,9 +1,260 @@
-{% extends "layout/layout.html" %} {% block main %}
-
-<section class="about-section py-5 my-5">
-  <div class="container text-center py-5">
-    <h1 class="heading-big text-dark">COMMING SOON...</h1>
+{% extends "layout/layout.html" %} {% block main %} {% load static %}
+<section class="banner" id="banner">
+  <div class="banner-text">
+    <h1 class="heading-big text-white">
+      OYE<span class="text-primary">CHATBOT</span>
+    </h1>
+    <p
+      class="text-light text-center"
+      style="font-weight: 800; font-size: 1.5rem"
+    >
+      An all-in-one platform to build and launch conversational chatbots without
+      coding.
+    </p>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <a href="{% url 'signup' %}" class="btn btn-primary mx-2">Try Demo</a>
+    </div>
   </div>
 </section>
+<section class="section">
+  <div class="container">
+    <div class="section__heading">
+      <!-- <div class="heading font-bold" style="position: relative">
+        <span class="head-relative">ABOUT</span>
+        <div class="overlay-heading">What We Do</div>
+      </div> -->
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="" />
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <h4 class="heading">What We Do</h4>
+        <p>
+          We Provide the Chat Bot Platform that will help our customers to build
+          their personal Chat Bot within few steps without any coding. Just
+          Enter the data you want to train your chatbot with and you are good to
+          go.
+        </p>
+        <p>
+          We help our customer to improve there business with personalized Chat
+          Bot that will help them to Market there business and improve the
+          business with our latest AI Technologies.
+        </p>
+        <p>We provide solution for following services:</p>
+        <ul>
+          <li class="mb-2">
+            ChatBot for Social Medial Like Facebook, Twitter, Instagram etc
+          </li>
+          <li class="mb-2">
+            Peronalized Chat Bot to assist with Business solution
+          </li>
+          <li class="mb-2">
+            Chat Bot for Customer Care in Personal or Business Website
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section__heading">
+      <!-- <div class="heading font-bold" style="position: relative">
+        <span class="head-relative">ABOUT</span>
+        <div class="overlay-heading">What We Do</div>
+      </div> -->
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p-3">
+        <div class="card card-inc p-2">
+          <div>
+            <i class="fas fa-bullhorn primaryicon"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="title">Improve the Marketing</h5>
+            <p>
+              <ul>
+                <li>
+                  Reach out to visitors proactively using personalized chatbot greetings.
+                </li>
+                <li>
+               Turn website visits into sales opportunities.
+              </li>
+            </ul>
+            </p>
+            <a href="{% url 'signup' %}" class="btn btn-dark mx-2">Try Demo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p-3">
+        <div class="card card-inc p-2">
+          <div>
+            <i class="fas fa-hand-holding-usd primaryicon"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="title">Supercharge your sales</h5>
+            <p>
+              <ul>
+                <li>
+                  Lead customers to a sale through recommended purchases and tailored offerings.
+                </li>
+                <li>
+                  Let customers purchase, order, or schedule meetings easily using a smart chatbot.
+              </li>
+            </ul>
+            </p>
+            <a href="{% url 'signup' %}" class="btn btn-dark mx-2">Try Demo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p-3">
+        <div class="card card-inc p-2">
+          <div>
+            <i class="fas fa-headset primaryicon"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="title">Optimize your support</h5>
+            <p>
+              <ul>
+                <li>
+                  Keep your customer support going 24X7.
+                </li>
+                <li>
+               Improve Resolution time.
+              </li>
+            </ul>
+            </p>
+            <a href="{% url 'signup' %}" class="btn btn-dark mx-2">Try Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="filler-section">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        <p class="heading">
+        Empower your company to stand out with customer experience
+      </p>
+      <a href="{% url 'signup' %}" class="btn btn-primary">Get Started</a>
+      </div>
+      <!-- <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+      </div> -->
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section__heading">
+      <!-- <div class="heading font-bold" style="position: relative">
+        <span class="head-relative">ABOUT</span>
+        <div class="overlay-heading">What We Do</div>
+      </div> -->
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="heading text-primay">
+          Watch Your Business Grow With Our Chat Bot
+        </h3>
+        <p>
+          No matter whether you’re a growing company or a market leader, ChatBot helps you communicate better with customers and push your business forward.
+        </p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <img src="{% static 'images/grow.jpg' %}" class="img-fluid" alt="">
+</div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
+     
+    <div class="row">
+      
+      <div class="col-12">
+        <div class="card mb-0 border-0">
+          
+          <div class="card-body">
+            <h4 class="title text-primary">
+              Engage 
+            </h4>
+            <p>
+              Reach out to visitors proactively using personalized chatbot greetings. Turn website visits into sales opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card mb-0 border-0">
+         
+          <div class="card-body">
+            <h4 class="title text-primary">
+              Nurture 
+            </h4>
+            <p>
+              Lead customers to a sale through recommended purchases and tailored offerings.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card mb-0 border-0">
+         
+          <div class="card-body">
+            <h4 class="title text-primary">
+              Qualify 
+            </h4>
+            <p>
+              Generate and qualify prospects automatically. Transfer high-intent leads to your sales reps in real time to shorten the sales cycle.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card mb-0 border-0">
+         
+          <div class="card-body">
+            <h4 class="title text-primary">
+              Convert 
+            </h4>
+            <p>
+              Let customers purchase, order, or schedule meetings easily using a smart chatbot.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <h3 class="heading text-primary">People Who Already Booked Our ChatBot</h3>
+      <p class="text-center" style="font-size: 1rem;">
+        The pre booking for our chat bot is already started and there are Thousands of peoples who already booked our chat bot before released you can also place your order for prebooking. Contact us for further details
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="display: flex;justify-content: center;align-items: center;">
+        <p class="heading">
+        Pre Booking Orders
+      </p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="display: flex;justify-content: center;align-items: center;">
+        <p class="heading text-primary">
+
+          <span class="counter" max-count="1463"></span>+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
