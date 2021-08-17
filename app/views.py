@@ -129,7 +129,7 @@ def verify_email_with_otp(request):
     return render(request, 'auth/email_otp_verify.html')
 
 
-@login_required(login_url="login")
+# @login_required(login_url="login")
 def dashboard(request):
     context = {}
     return render(request, 'dashboard/index.html', context)
@@ -153,10 +153,10 @@ def trainBot(request):
     return redirect('addIntents')
 
 
-@login_required(login_url="login")
+# @login_required(login_url="login")
 def addIntents(request):
     if request.method == 'POST':
-        user = User.objects.get(pk=request.user.id)
+        user = User.objects.get(email="akashdeepcse@gmail.com")
         intents = json.loads(request.body.decode('utf-8'))
         patterns = "|".join(intents['patterns'])
         responses = "|".join(intents['responses'])
@@ -174,7 +174,7 @@ def addIntents(request):
     return render(request, 'dashboard/intents.html', context)
 
 
-@login_required(login_url="login")
+# @login_required(login_url="login")
 def getMessage(request):
     if request.method == 'POST':
         req = json.loads(request.body.decode('utf-8'))
