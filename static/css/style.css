@@ -194,11 +194,14 @@ nav {
   justify-content: center;
   align-items: center;
 }
+.hide {
+  display: none;
+}
 .banner-text {
   max-width: 500px;
   height: auto;
   text-align: center;
-  text-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%) !important ;
+  text-shadow: 0px 1px 3px #121212a3;
 }
 .dropdown-item {
   font-size: 14px;

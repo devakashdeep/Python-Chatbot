@@ -81,7 +81,7 @@ const sendMessage = () => {
             <p style="font-size:12px; color:#121212">${new Date(Date.now()).toTimeString()} chat bot</p>
             </div>`
             msgsection.insertAdjacentHTML('beforeend', html);
-            msg = ""
+            document.querySelector('#ask').value = "";
 
         })
         .catch(error => console.log('error', error));
@@ -169,103 +169,24 @@ if (responses_pills && responses_pills.length > 0) {
         })
     })
 }
-const patterns = document.querySelector('#patterns')
-patterns.addEventListener('keypress', (e) => {
-    console.log(e.key)
-    if (e.key == 'Enter' || e.key == "|" || patterns.value.includes('|')) {
-        const ses_patterns = sessionStorage.getItem('@patterns');
-        const a_val = patterns.value.split('|')[0];
-        if (a_val != '') {
-            if (ses_patterns && (ses_patterns !== null || ses_patterns !== undefined)) {
-                let data = ses_patterns;
-                const a_val = patterns.value.split('|')[0];
-                sessionStorage.setItem('@patterns', (data + '|' + a_val).toString())
-            } else {
-                const a_val = patterns.value.split('|')[0];
-                sessionStorage.setItem('@patterns', a_val.toString())
-            }
-            setSessioValToHTML('#patternsa', '@patterns');
-            patterns.value = '';
-        }
-        patterns.value = '';
-    }
-})
-patterns.addEventListener('input', (e) => {
-    console.log(e.key)
-    if (patterns.value.includes('|')) {
-        const ses_patterns = sessionStorage.getItem('@patterns');
-        const a_val = patterns.value.split('|')[0];
-        if (a_val != '') {
-            if (ses_patterns && (ses_patterns !== null || ses_patterns !== undefined)) {
-                let data = ses_patterns;
-                const a_val = patterns.value.split('|')[0];
-                sessionStorage.setItem('@patterns', (data + '|' + a_val).toString())
-            } else {
-                const a_val = patterns.value.split('|')[0];
-                sessionStorage.setItem('@patterns', a_val.toString())
-            }
-            setSessioValToHTML('#patternsa', '@patterns');
-            patterns.value = '';
-        }
-        patterns.value = '';
-    }
-})
 
-const responses = document.querySelector('#responses')
-responses.addEventListener('input', (e) => {
-
-    if (responses.value.includes('|')) {
-        const ses_responses = sessionStorage.getItem('@responses');
-        const a_val = responses.value.split('|')[0];
-        if (a_val != '') {
-            if (ses_responses && (ses_responses !== null || ses_responses !== undefined)) {
-                let data = ses_responses;
-                const a_val = responses.value.split('|')[0];
-                sessionStorage.setItem('@responses', (data + '|' + a_val).toString())
-            } else {
-                const a_val = responses.value.split('|')[0];
-                sessionStorage.setItem('@responses', a_val.toString())
-            }
-            setSessioValToHTML('#responses_u', '@responses');
-            responses.value = '';
-        }
-        responses.value = '';
-    }
-})
-responses.addEventListener('keypress', (e) => {
-
-    if (e.key == 'Enter' || e.key == "|" || responses.value.includes('|')) {
-        const ses_responses = sessionStorage.getItem('@responses');
-        const a_val = responses.value.split('|')[0];
-        if (a_val != '') {
-            if (ses_responses && (ses_responses !== null || ses_responses !== undefined)) {
-                let data = ses_responses;
-                const a_val = responses.value.split('|')[0];
-                sessionStorage.setItem('@responses', (data + '|' + a_val).toString())
-            } else {
-                const a_val = responses.value.split('|')[0];
-                sessionStorage.setItem('@responses', a_val.toString())
-            }
-            setSessioValToHTML('#responses_u', '@responses');
-            responses.value = '';
-        }
-    }
-})
 
 
 const submitIntents = () => {
+
+
     const csrftoken = getCookie('csrftoken');
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append('X-CSRFToken', csrftoken);
     const tag = document.querySelector('#tagsIn').value;
-    const patterns = sessionStorage.getItem('@patterns').split('|');
-    const responses = sessionStorage.getItem('@responses').split('|');
+    const inpPatterns = document.querySelector('#patterns').value;
+    const inpResponses = document.querySelector('#responses').value;
     var raw = JSON.stringify({
         tag: tag,
-        patterns: patterns,
-        responses: responses
+        patterns: inpPatterns,
+        responses: inpResponses
     });
 
     var requestOptions = {
@@ -315,6 +236,4 @@ dropdownMenuButton.addEventListener('click', function () {
     })
 })
 //--></script>
-
-
 

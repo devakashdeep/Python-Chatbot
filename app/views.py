@@ -156,10 +156,10 @@ def trainBot(request):
 # @login_required(login_url="login")
 def addIntents(request):
     if request.method == 'POST':
-        user = User.objects.get(email="akashdeepcse@gmail.com")
+        user = User.objects.get(email="akashdeep1@gmail.com")
         intents = json.loads(request.body.decode('utf-8'))
-        patterns = "|".join(intents['patterns'])
-        responses = "|".join(intents['responses'])
+        patterns = intents['patterns']
+        responses = intents['responses']
         # print(type(patterns))
         added_intent = models.Intents(
             customer=user, tag=intents['tag'], patterns=patterns, responses=responses)

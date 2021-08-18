@@ -209,7 +209,8 @@
                   style="font-size: 1.2rem; margin-right: 10px"
                 ></i>
                 <span
-                  >1/A Street 36, Sector 10,<br>Bhilai, Chhattisgarh - 490006</span
+                  >1/A Street 36, Sector 10,<br />Bhilai, Chhattisgarh -
+                  490006</span
                 >
               </div>
             </div>
@@ -299,6 +300,16 @@
           let val = parseInt(counter.innerText);
           counter.innerText = val + 1;
         }, 4000);
+      });
+
+      const collapsebtn = document.querySelectorAll(".collapse-btn");
+      collapsebtn.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const attVal = btn.dataset.id;
+          const sectionCollaps = document.querySelector(attVal);
+          sectionCollaps.classList.toggle("show");
+          sectionCollaps.classList.toggle("hide");
+        });
       });
     </script>
   </body>

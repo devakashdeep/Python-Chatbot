@@ -1,7 +1,7 @@
 {% extends "./layout.html" %} {% block main %} {% load static %}
 
 <section class="section">
-  <div class="container py-3">
+  <div class="container">
     <div class="row">
       <div class="text-center sub-heading mb-3">Train Chat Bot</div>
       <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -9,6 +9,28 @@
           <div class="d-block">
             <form action="" method="post">
               <p class="title text-center">Add Intents</p>
+              <div>
+                {% if messages %} {% for message in messages %}
+                <div
+                  class="
+                    alert
+                    {% if message.tags %}alert-{{message.tags}}{% endif %}
+                    alert-dismissible
+                    fade
+                    show
+                  "
+                  role="alert"
+                >
+                  {{ message }}
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                {% endfor %} {% endif %}
+              </div>
               {% csrf_token %}
               <label for="tagsIn">Tags</label>
               <div class="w-100 mt-3">
@@ -33,9 +55,7 @@
                   class="input-field"
                   placeholder="Training Questions"
                 />
-                <p style="font-size: 12px">
-                  Use | or Enter key to add new entry
-                </p>
+                <p style="font-size: 12px">Use | key to add new entry</p>
               </div>
               <label for="responses">Responses</label>
               <div
@@ -52,9 +72,7 @@
                   aria-multiline="true"
                   multiple
                 />
-                <p style="font-size: 12px">
-                  Use | or Enter key to add new entry
-                </p>
+                <p style="font-size: 12px">Use | key to add new entry</p>
               </div>
               <div class="w-100 mt-3">
                 <span id="submit-intents" class="btn btn-dark d-block mx-auto">
@@ -69,35 +87,7 @@
               >
               <div>
                 <ul class="" id="intentList">
-                  {% if intents %}
-                  <div>
-                    {% if messages %} {% for message in messages %}
-                    <div
-                      class="
-                        alert
-                        {%
-                        if
-                        message.tags
-                        %}alert-{{message.tags}}{%
-                        endif
-                        %}
-                        alert-dismissible
-                        fade
-                        show
-                      "
-                      role="alert"
-                    >
-                      {{ message }}
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="alert"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    {% endfor %} {% endif %}
-                  </div>
-                  {% for intent in intents %}
+                  {% if intents %} {% for intent in intents %}
                   <li class="mb-3">{{intent}}</li>
                   {% endfor %} {% endif %}
                 </ul>
@@ -124,7 +114,7 @@
               id="msg-section"
             ></div>
             <div style="position: absolute; left: 0; right: 0; bottom: -50px">
-              <form action="" method="post">
+              <!-- <form action="" method="post"> -->
                 <div class="row">
                   <div class="col-9">
                     <input
@@ -140,7 +130,7 @@
                     <div id="sendMessage" class="btn btn-primary">send</div>
                   </div>
                 </div>
-              </form>
+              <!-- </form> -->
             </div>
           </div>
         </div>
